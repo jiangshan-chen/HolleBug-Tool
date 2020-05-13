@@ -1,0 +1,67 @@
+{
+  "easycom": {
+    "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+  },
+  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/home/index",
+      "style": {}
+    },
+    {
+      "path": "pages/more/index",
+      "style": {}
+    },
+    {
+      "path": "pages/list/index",
+      "style": {}
+    }
+    ,{
+      "path" : "pages/weather/index",
+      "style" : {}
+    }
+    ,{
+      "path" : "pages/news/index",
+      "style" : {}
+    }
+        ,{
+            "path" : "pages/news/zhihu",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/news/bilibili",
+            "style" : {}
+        }
+    ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [{
+        "pagePath": "pages/home/index",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home2.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/list/index",
+        "iconPath": "static/tabbar/all.png",
+        "selectedIconPath": "static/tabbar/all2.png",
+        "text": "大厅"
+      },
+      {
+        "pagePath": "pages/more/index",
+        "iconPath": "static/tabbar/set.png",
+        "selectedIconPath": "static/tabbar/set2.png",
+        "text": "更多"
+      }
+    ]
+  }
+}
