@@ -31,6 +31,10 @@
             "path" : "pages/news/bilibili",
             "style" : {}
         }
+        ,{
+            "path" : "pages/webview/webview",
+            "style" : {}
+        }
     ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
