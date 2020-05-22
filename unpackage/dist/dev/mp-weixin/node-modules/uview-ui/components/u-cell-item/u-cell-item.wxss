@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.u-cell.data-v-aa03f0ac {
+.u-cell.data-v-1060e57e {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -39,20 +39,20 @@
   background-color: #fff;
   text-align: left;
 }
-.u-cell_title.data-v-aa03f0ac {
+.u-cell_title.data-v-1060e57e {
   font-size: 28rpx;
 }
-.u-cell__left-icon-wrap.data-v-aa03f0ac {
+.u-cell__left-icon-wrap.data-v-1060e57e {
   margin-right: 10rpx;
   font-size: 32rpx;
 }
-.u-cell__right-icon-wrap.data-v-aa03f0ac {
+.u-cell__right-icon-wrap.data-v-1060e57e {
   margin-left: 10rpx;
   color: #969799;
   font-size: 28rpx;
 }
-.u-cell__left-icon-wrap.data-v-aa03f0ac,
-.u-cell__right-icon-wrap.data-v-aa03f0ac {
+.u-cell__left-icon-wrap.data-v-1060e57e,
+.u-cell__right-icon-wrap.data-v-1060e57e {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -61,7 +61,7 @@
           align-items: center;
   height: 48rpx;
 }
-.u-cell-border.data-v-aa03f0ac:after {
+.u-cell-border.data-v-1060e57e:after {
   position: absolute;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -74,32 +74,32 @@
   -webkit-transform: scaleY(0.5);
   transform: scaleY(0.5);
 }
-.u-cell-border.data-v-aa03f0ac {
+.u-cell-border.data-v-1060e57e {
   position: relative;
 }
-.u-border-gap.data-v-aa03f0ac:after {
+.u-border-gap.data-v-1060e57e:after {
   left: 32rpx !important;
 }
-.u-cell__label.data-v-aa03f0ac {
+.u-cell__label.data-v-1060e57e {
   margin-top: 6rpx;
   font-size: 26rpx;
   line-height: 36rpx;
   color: #909399;
 }
-.u-cell__value.data-v-aa03f0ac {
+.u-cell__value.data-v-1060e57e {
   overflow: hidden;
   text-align: right;
   vertical-align: middle;
   color: #909399;
   font-size: 26rpx;
 }
-.u-cell__title.data-v-aa03f0ac,
-.u-cell__value.data-v-aa03f0ac {
+.u-cell__title.data-v-1060e57e,
+.u-cell__value.data-v-1060e57e {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
 }
-.u-cell--required.data-v-aa03f0ac {
+.u-cell--required.data-v-1060e57e {
   overflow: visible;
   display: -webkit-box;
   display: -webkit-flex;
@@ -108,7 +108,7 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.u-cell--required.data-v-aa03f0ac:before {
+.u-cell--required.data-v-1060e57e:before {
   position: absolute;
   content: '*';
   left: 8px;

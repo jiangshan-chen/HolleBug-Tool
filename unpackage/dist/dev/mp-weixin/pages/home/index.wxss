@@ -35,11 +35,6 @@
   position: relative;
 }
 .content {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   background: -webkit-gradient(linear, left top, left bottom, from(#323232), color-stop(40%, #3f3f3f), color-stop(150%, #1c1c1c)), -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.4)), color-stop(200%, rgba(0, 0, 0, 0.25)));
   background: -webkit-linear-gradient(top, #323232 0%, #3f3f3f 40%, #1c1c1c 150%), -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.25) 200%);
   background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%), linear-gradient(to top, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.25) 200%);
@@ -53,16 +48,15 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  padding: 20px;
+  padding: 15px;
 }
 .everyday-card {
   object-fit: cover;
-  margin: 20px;
   background-image: -webkit-gradient(linear, left bottom, left top, from(#dfe9f3), to(white));
   background-image: -webkit-linear-gradient(bottom, #dfe9f3 0%, white 100%);
   background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  padding: 25px;
   border-radius: 10px;
-  padding: 20px 55px;
   text-align: center;
 }
 .music-img {
@@ -96,6 +90,18 @@
   display: flex;
   -webkit-justify-content: space-around;
           justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin: 10px;
+}
+.music-action-more {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;

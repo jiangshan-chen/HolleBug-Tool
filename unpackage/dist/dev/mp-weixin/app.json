@@ -2,7 +2,12 @@
   "pages": [
     "pages/home/index",
     "pages/more/index",
-    "pages/list/index"
+    "pages/list/index",
+    "pages/weather/index",
+    "pages/news/index",
+    "pages/news/zhihu",
+    "pages/news/bilibili",
+    "pages/webview/webview"
   ],
   "subPackages": [],
   "window": {
@@ -39,5 +44,5 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap79.json"
 }
