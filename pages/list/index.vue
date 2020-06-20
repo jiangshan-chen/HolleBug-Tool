@@ -11,20 +11,24 @@
       <!-- <u-cell-item icon="integral-fill" title="会员等级" value="新版本"></u-cell-item> -->
     </u-cell-group>
     <view class="text-nav">
-      <view class="text-nav-item">
-        <image src="../../static/logo.png"></image>
+      <view class="text-nav-item u-border">
+        <image src="https://uviewui.com/common/logo.png"></image>
+		<a href="https://v1.alapi.cn/api/mingyan"></a>
         <text>one two</text>
       </view>
-      <view class="text-nav-item">
-        <image src="../../static/logo.png"></image>
+      <view class="text-nav-item u-border">
+        <image src="https://uviewui.com/common/logo.png"></image>
+		<a href="https://v1.alapi.cn/api/new/hanfu?num=10&page&rand&word"></a>
         <text>three four</text>
       </view>
-      <view class="text-nav-item">
-        <image src="../../static/logo.png"></image>
+      <view class="text-nav-item u-border">
+        <image src="https://uviewui.com/common/logo.png"></image>
+		<a href="https://v1.alapi.cn/api/video/jh?url=https://h5.pipix.com/s/uW4KXh/"></a>
         <text>five six</text>
       </view>
-      <view class="text-nav-item">
-        <image src="../../static/logo.png"></image>
+      <view class="text-nav-item u-border">
+        <image src="https://uviewui.com/common/logo.png"></image>
+		<a href="https://v1.alapi.cn/api/bdpwd?url=https://pan.baidu.com/share/init?surl=vlny0C5moLIu97GvBzVw7Q"></a>
         <text>seven eight</text>
       </view>
     </view>

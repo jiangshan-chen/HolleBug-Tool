@@ -15,7 +15,8 @@
 				<view class="music-player">
 					<view class="music-progress">
 						<text>{{ music.startTime || '00:00' }}</text>
-						<view style="flex: 1;"><u-slider style="width: 100%;" :block-width="15" v-model="progress" max="100" ref="progress" @start="onStartSider"></u-slider></view>
+						<view style="flex: 1;">
+							<u-slider style="width: 100%;" :block-width="15" v-model="progress" max="100" ref="progress" @moving="getOne" @end="getTwo" @start="onStartSider"></u-slider></view>
 						<!-- <u-line-progress :show-percent="false" inactive-color="#ccc" :height="6" :percent="progress" :striped-active="true"></u-line-progress> -->
 						<text>{{ music.endTime || '00:00' }}</text>
 					</view>
@@ -25,12 +26,12 @@
 					<u-icon name="skip-back-left" :size="45" @click="onPrevious"></u-icon>
 					<u-icon v-if="player == true" name="pause-circle-fill" @click="onPause" :size="90"></u-icon>
 					<u-icon v-if="player == false" name="play-circle-fill" @click="onPlay" :size="90"></u-icon>
-					<u-icon name="skip-forward-right" :size="45" @click="getMusicInfo"></u-icon>
+					<u-icon name="skip-forward-right" :size="45" @click="onNext"></u-icon>
 				</view>
 				<view class="music-action-more">
 					<u-icon name="reload" :size="45" @click="getMusicInfo"></u-icon>
 					<u-icon name="more-circle" :size="45" @click="getMoreAction"></u-icon>
-					<u-icon name="list" :size="45" @click="getMusicInfo"></u-icon>
+					<u-icon name="list" :size="45" @click="onReadHistory"></u-icon>
 				</view>
 			</view>
 		</view>
@@ -49,6 +50,12 @@
 		</u-popup>
 		<!-- 操作菜单 -->
 		<u-action-sheet :list="actionList" @click="onAction" v-model="actionShow"></u-action-sheet>
+		<!-- 历史播放列表 -->
+		<u-popup v-model="historyShow" mode="bottom" length="60%" >
+			<view v-for="(item,index) in music_list" :key="index">
+				{{item.name}}
+			</view>
+		</u-popup>
 	</view>
 </template>
 
@@ -72,6 +79,7 @@ export default {
 				startTime: 0,
 				endTime: 0
 			},
+			music_list:[],
 			progress: 0,
 			player: false,
 			NAVBAR_HEIGHT: 44,
@@ -82,7 +90,8 @@ export default {
 			{text:'抖音榜'},
 			{text:'电音榜'}],
 			actionShow:false,
-			content_height:0
+			content_height:0,
+			historyShow:false
 		};
 	},
 	computed: {
@@ -91,6 +100,7 @@ export default {
 		}
 	},
 	onLoad() {
+		console.log(this.$u.config.v);
 		// innerAudioContext.autoplay = true;
 		this.getMusicInfo();
 		innerAudioContext.onPlay(e=>{this.player = true})
@@ -144,9 +154,16 @@ export default {
 		this.setLastMusic()
 	},
 	methods: {
+		getOne(e){
+			console.log(e,'moving')
+		},
+		getTwo(e){
+			console.log(e,'end')
+		},
 		setLastMusic(val){
 			let array = this.getLastMusic()
-			if(val) array.push(val)	
+			if(val && array.some(item => item.url == val.url)) return false
+			array.push(val)
 			uni.setStorage({key: 'music',data: val ? array : []});
 		},
 		getLastMusic(){
@@ -190,6 +207,17 @@ export default {
 			this.onPlan()
 			this.onPlay()
 		},
+		/** 下一首 **/
+		onNext(){
+			this.getMusicInfo()
+			this.onPlan()
+			this.onPlay()
+		},
+		/** 查看历史播放历史记录列表 **/
+		onReadHistory(){
+			this.music_list = this.getLastMusic()
+			this.historyShow = true
+		},
 		/** 开始滑动 **/
 		onStartSider() {
 			//开始滑动
@@ -203,17 +231,17 @@ export default {
 		},
 		onPlay() {
 			//播放音乐
-			console.log('播放');
+			this.player = true
 			innerAudioContext.play();
 		},
 		onPause() {
 			//暂停播放音乐
-			console.log('暂停');
+			this.player = false
 			innerAudioContext.pause();
 		},
 		onStop() {
 			//停止播放音乐
-			console.log('stop');
+			this.player = false
 			innerAudioContext.stop();
 		},
 		/** 更多操作 **/
@@ -304,5 +332,14 @@ export default {
 	justify-content: space-between;
 	align-items: center;
 	margin: 10px;
+}
+.u-drawer{
+	text-align: center;
+}
+.u-drawer-content{
+	width: 90% !important;
+	// margin-bottom: 20px;
+	border-radius: 10px;
+	margin: 0 20px 30px 20px;
 }
 </style>
